@@ -3,8 +3,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error,mean_squared_error
 import numpy as np
 
-
-data = pd.read_csv("Machine Learning/machine_learning.csv")
+data = pd.read_csv("machine_learning.csv")
 
 X = data[["Hours"]]
 y = data[["Score"]]
@@ -19,9 +18,12 @@ mae = mean_absolute_error(y,predicted_score)
 mse = mean_squared_error(y,predicted_score)
 rmse = np.sqrt(mse)
 
-print("MAE",mae)
-print("MSE",mse)
-print("RMSE",rmse)
+print("\n📊 Model Evaluation Metrics")
+print("-" * 30)
+print(f"MAE  : {mae:.4f}")
+print(f"MSE  : {mse:.4f}")
+print(f"RMSE : {rmse:.4f}")
+
 
 new_hour = float(input("Enter hours of you studied :"))
 new_pred = model.predict([[new_hour]])
